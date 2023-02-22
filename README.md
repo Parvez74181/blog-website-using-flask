@@ -16,27 +16,16 @@ To run this website, you need to have the following installed:
 ## Installation
 
 1. Clone the repository:
-   git clone https://github.com/your_username/flask-blog-website.git
+   git clone https://github.com/Parvez74181/blog-website-using-flask
 
-2. Create a virtual environment:
-   python -m venv env
-
-3. Activate the virtual environment:
-
-- On Windows:
-  env\Scripts\activate
-
-- On macOS or Linux:
-  source env/bin/activate
-
-4. Install the required packages:
+2. Install the required packages:
    pip install -r requirements.txt
 
-5. Create the database:
-   python
-   > > > from app import db
-   > > > db.create_all()
-   > > > exit()
+3. Create the database:
+   - python
+   - from app import db
+   - db.create_all()
+   - exit()
 
 ## Usage
 
