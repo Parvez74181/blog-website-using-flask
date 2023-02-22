@@ -1,0 +1,517 @@
+$rich-black: #050517;
+$flame: #cf5c36;
+$sunset: #efc88b;
+$vanilla: #f4e3b2;
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+
+* {
+  font-family: "Nunito", sans-serif;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  background: white;
+}
+::-webkit-scrollbar-thumb {
+  background: $flame;
+  border-radius: 24px;
+}
+body {
+  background: $rich-black !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+input,
+textarea {
+  border: 1px solid white !important;
+  &:focus {
+    border: 1px solid $sunset !important;
+    box-shadow: 0 0 2px 3px $sunset !important;
+  }
+}
+input[type="checkbox"] {
+  &:focus {
+    cursor: pointer;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  position: relative;
+  z-index: 5;
+  border: 1px solid $sunset !important;
+  color: $sunset !important;
+  letter-spacing: 2px !important;
+  font-weight: 700 !important;
+  box-shadow: 5px 5px rgba($color: $sunset, $alpha: 0.5);
+}
+.navbar {
+  position: sticky !important;
+  top: 0;
+  background: $rich-black !important;
+  z-index: 1000;
+  box-shadow: 0 0 15px rgba($color: $sunset, $alpha: 0.2);
+  .nav-item {
+    position: relative;
+    &::after {
+      transition: 0.2s;
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      bottom: 0px;
+      height: 1px;
+      width: 0;
+      background: white;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  .btn {
+    font-weight: 500 !important;
+    letter-spacing: 1px !important;
+    box-shadow: none !important;
+  }
+}
+
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  background: url(https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: $rich-black, $alpha: 0.8);
+  }
+
+  .h1,
+  .h4 {
+    z-index: 5;
+    color: white;
+    font-size: 6rem;
+  }
+  .h4 {
+    font-size: 3rem;
+  }
+}
+
+.blogs {
+  .h1 {
+    font-size: 3rem;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 2px;
+      background: $flame;
+    }
+  }
+  .card {
+    background: $rich-black;
+    box-shadow: 20px 20px 60px #040414, -20px -20px 60px #06061a;
+    width: 18rem;
+    color: rgb(163, 163, 163);
+    border: 1px solid rgba($color: $sunset, $alpha: 0.1);
+    transition: ease-in 0.2s;
+    &:hover {
+      scale: 1.01;
+    }
+    .card-img-top {
+      background: #000;
+      margin-top: 12px;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      object-fit: cover !important;
+      height: 160px;
+    }
+    .card-title {
+      overflow: hidden;
+      font-weight: 700;
+      height: 26px;
+      justify-content: flex-start;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+    .card-text {
+      overflow: hidden;
+      height: 100px;
+      justify-content: flex-start;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
+
+.dashboard {
+  position: relative;
+  overflow: auto;
+  max-height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: space-around;
+  .h1 {
+    font-size: 3rem;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 2px;
+      background: $flame;
+    }
+  }
+  .wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    gap: 50px;
+    flex-wrap: wrap;
+    .box {
+      text-decoration: none;
+      position: relative;
+      width: 230px;
+      height: 200px;
+      background: $rich-black;
+      flex-direction: column;
+      justify-content: space-around;
+      font-size: 2rem;
+      text-align: center;
+      border: 1px solid rgba($color: green, $alpha: 0.2);
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        scale: 1.01;
+      }
+    }
+  }
+}
+
+.contact {
+  flex-direction: column;
+  .h1 {
+    font-size: 3rem;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 2px;
+      background: $flame;
+    }
+  }
+  .contact-form {
+    .btn {
+      font-weight: 400 !important;
+      letter-spacing: 1px !important;
+      padding: 15px;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+    }
+  }
+}
+
+.login,
+.registration {
+  min-height: 70vh;
+  color: $rich-black !important;
+  .card {
+    position: relative;
+    // width: 450px;
+    min-height: 400px !important;
+    // background: $rich-black;
+    justify-content: space-between;
+    box-shadow: 20px 20px 60px #040414, -20px -20px 60px #06061a;
+    border: 1px solid rgba($color: $sunset, $alpha: 0.1);
+    .h1 {
+      font-size: 3rem;
+      height: 20%;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 2px;
+        background: $rich-black;
+      }
+    }
+    .login-form,
+    .registration-form {
+      position: relative;
+      top: 0;
+      min-height: 250px;
+      .input-box-user-email,
+      .input-box-user-name,
+      .input-box-user-address,
+      .input-box-user-password,
+      .input-box-user-confirm-password {
+        position: relative;
+        justify-content: flex-start !important;
+        i {
+          position: absolute;
+          top: 8px;
+          font-size: 16px;
+        }
+        input {
+          border-radius: 0 !important;
+          border: none !important;
+          padding-left: 25px !important;
+          padding-right: 0 !important;
+          border-bottom: 2px solid $rich-black !important;
+          &:focus {
+            box-shadow: none !important;
+          }
+        }
+      }
+      .input-box-user-password,
+      .input-box-user-confirm-password {
+        .fa-eye,
+        .fa-eye-slash {
+          cursor: pointer;
+          right: 10px !important;
+        }
+        .fa-eye-slash {
+          right: 8.5px !important;
+          display: none;
+        }
+      }
+      .btn {
+        border-color: $rich-black !important;
+        color: $rich-black !important;
+        font-size: 18px;
+        width: 95% !important;
+        box-shadow: 5px 5px rgba($color: $rich-black, $alpha: 0.5);
+      }
+    }
+  }
+}
+.social-media-login {
+  position: relative;
+  width: 300px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    background: white;
+    color: $rich-black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: ease-in-out 0.5s;
+    font-size: 20px;
+    &:hover {
+      rotate: 360deg;
+      // font-size: 24px;
+      scale: 1.08;
+    }
+  }
+}
+.create-blog {
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 70vh;
+  .h1 {
+    font-size: 3rem;
+    height: 20%;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 2px;
+      background: $flame;
+    }
+  }
+  .blog-upload-form {
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    height: 80%;
+    width: 50%;
+    gap: 30px;
+    input,
+    textarea {
+      position: relative;
+      width: 100%;
+    }
+    .btn {
+      font-weight: 500 !important;
+      letter-spacing: 1px !important;
+    }
+  }
+}
+
+.all-blogs {
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 70vh;
+  .h1 {
+    font-size: 3rem;
+    height: 20%;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 2px;
+      background: $flame;
+    }
+  }
+  .table-responsive {
+    position: relative;
+    min-width: 90%;
+  }
+  td,
+  th {
+    position: relative;
+    min-width: 100px !important;
+  }
+  .title {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 30px;
+  }
+  .fa-trash,
+  .fa-pen-to-square {
+    cursor: pointer;
+  }
+}
+
+.single-blog-page-section {
+  position: relative;
+  width: 70% !important;
+  color: rgb(199, 199, 199);
+  .card-img-top {
+    position: relative;
+    width: 100% !important;
+    max-height: 500px !important;
+    object-fit: contain;
+  }
+  .card-title {
+    font-weight: 700;
+    font-size: 30px !important;
+  }
+  .card-text {
+    line-height: 35px;
+    font-size: 18px;
+    text-align: justify;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hero-section {
+    .h1 {
+      font-size: 2.7rem;
+    }
+    .h4 {
+      font-size: 1.7rem;
+    }
+    .btn {
+      font-size: 1rem;
+    }
+  }
+}
+// animista animations
+.scale-in-center {
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.tracking-in-contract {
+  animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2023-2-16 12:25:17
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation tracking-in-contract
+ * ----------------------------------------
+ */
+
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2023-2-16 12:38:39
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-in-center
+ * ----------------------------------------
+ */
+@keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,50 @@
+{%extends 'base.html'%}
+
+{%block title%}Coding Thunder{%endblock%}
+
+{%block content%}
+
+
+<section class="container flex all-blogs">
+     <h1 class="h1 text-center text-light">All Blogs</h1>
+
+     <div class="table-responsive">
+
+          <table class="table table-warning table-striped table-bordered">
+               <thead>
+                    <tr>
+                         <th class="text-center" scope="col">#</th>
+                         <th class="text-center" scope="col">Title</th>
+                         <th class="text-center" scope="col">Edit</th>
+                         <th class="text-center" scope="col">Delete</th>
+                         <th class="text-center" scope="col">Views</th>
+                    </tr>
+               </thead>
+               <tbody>
+                    {%for item in item%}
+                    <tr>
+                         <!-- si no -->
+                         <th class="text-center" scope="row">{{item.si_no}}</th>
+
+                         <!-- title -->
+                         <td class="text-center title"><a href="/blog/{{item.title}}/{{item.id}}">{{item.title}}</a>
+                         </td>
+
+                         <!-- edit button -->
+                         <td class="text-center"><a href="/update/{{item.title}}/{{item.id}}"><i
+                                        class="fa-solid fa-pen-to-square fs-5 text-success"></i></a></td>
+
+                         <!-- delete buton -->
+                         <td class="text-center"><a href="/delete/{{item.title}}/{{item.id}}"><i
+                                        class="fa-solid fa-trash fs-5 text-danger"></i></a></td>
+
+                         <!-- views -->
+                         <td class="text-center">{{item.view}}</td>
+                    </tr>
+                    {%endfor%}
+
+               </tbody>
+          </table>
+     </div>
+</section>
+{%endblock%}

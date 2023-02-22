@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+
+{%block title%}Coding Thunder | Blogs{%endblock%}
+
+
+{%if item%}
+{%block content%}
+<section class="container single-blog-page-section ">
+
+     <div class="my-5">
+          <img src="data:image/png;base64,{{item.thumbnail}}" class="card-img-top rounded" alt="...">
+          <div class="card-body">
+               <h5 class="card-title mt-3 ">{{item.title}}</h5>
+               <p class="card-text mt-3 ">{{item.description}}</p>
+          </div>
+     </div>
+
+</section>
+
+{%endblock%}
+{%endif%}
+{%block script%}
+<script src="../static/js/single-blog-page.js"></script>
+{%endblock%}

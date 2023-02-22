@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+
+{%block title%}Coding Thunder{%endblock%}
+
+{%block content%}
+
+
+<section class="container-fluid flex create-blog my-5">
+     <h1 class="h1 text-center text-light my-5">Create a new blog</h1>
+
+     <form class="flex blog-upload-form" enctype="multipart/form-data">
+          <!-- thumbnmail img select input -->
+          <input type="file" name="thumbnail-image" accept="image/*" class="form-control" id="thumbnail-image">
+
+          <!-- post title -->
+          <input type="text" value="{{item.title}}" name="post-title" placeholder="Enter post title here..."
+               class="form-control" id="post-title" required>
+
+          <!-- post description -->
+          <textarea type="text" name="post-desc" placeholder="Enter post description here..." class="form-control"
+               id="post-desc" rows="15" required>{{item.description}}</textarea>
+
+          <!-- submit button -->
+          <button type="submit" class="btn w-50 p-2 fs-5" id="submit-btn">
+               {%if item%}
+               Update Blog
+
+               {%else%}
+               Upload Blog
+               {%endif%}
+          </button>
+     </form>
+</section>
+{%endblock%}
+
+{%block script%}
+
+<script src="{{ url_for('static', filename='../static/js/create-blog.js') }}"></script>
+{%endblock%}

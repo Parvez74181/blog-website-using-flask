@@ -1,0 +1,72 @@
+{%extends 'base.html'%}
+
+{%block title%}Coding Thunder | Create a new account{%endblock%}
+
+{%block content%}
+
+<section class="container-fluid flex registration my-5">
+     <div class="card flex p-4" style="width:22rem">
+          <h1 class="h1 text-center mb-5">Sign up</h1>
+
+          <form class="row flex g-3 registration-form" action="{{url_for('registration')}}" method="post">
+
+               <!-- user-name -->
+               <div class="mb-4 flex input-box-user-name">
+                    <i class="fa-solid fa-at"></i>
+                    <input required type="text" value="{{user_name}}" name="user-name" class="form-control"
+                         id="user-name" placeholder="Enter your name">
+               </div>
+
+               <!-- user-address -->
+               <div class="mb-4 flex input-box-user-address">
+                    <i class="fa-solid fa-location-arrow"></i>
+                    <input required type="text" value="{{user_address}}" name="user-address" class="form-control"
+                         id="user-address" placeholder="Enter your address">
+               </div>
+
+               <!-- user-email -->
+               <div class="mb-4 flex input-box-user-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input required type="email" value="{{user_email}}" name="user-email" class="form-control"
+                         id="user-email" placeholder="Enter your email">
+               </div>
+
+               <span class="text-danger text-start mt-0 email-err"></span>
+
+               <!-- user-password -->
+               <div class="mb-4 flex input-box-user-password">
+                    <i class="fa-solid fa-lock"></i>
+                    <input required type="password" value="{{user_password}}" name="user-password" class="form-control"
+                         id="user-password" placeholder="Enter your password">
+                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-eye-slash"></i>
+               </div>
+
+               <span class="text-danger text-start mt-0 pass-err"></span>
+
+
+
+               <!-- user-confirm-password -->
+               <div class="mb-4 flex input-box-user-confirm-password">
+                    <i class="fa-solid fa-lock"></i>
+                    <input required type="password" value="{{user_confirm_password}}" name="user-confirm-password"
+                         class="form-control" id="user-confirm-password" placeholder="Enter your confirm password">
+                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-eye-slash"></i>
+               </div>
+
+               <span class="text-danger text-start mt-0 pass-err"></span>
+
+
+
+               <button type="submit" class="btn">Sign up</button>
+          </form>
+
+          <span class="mt-4">already have an account? <a href="/login">Sign in</a></span>
+     </div>
+</section>
+{%endblock%}
+
+{%block script%}
+<script src="../static/js/registration.js"></script>
+{%endblock%}
