@@ -10,7 +10,6 @@ To run this website, you need to have the following installed:
 - Flask (version 1.1.2 or higher)
 - Flask-Bcrypt (version 0.7.1 or higher)
 - Flask-SQLAlchemy
-- Flask-WTF
 - Pillow
 
 ## Installation
@@ -23,7 +22,7 @@ To run this website, you need to have the following installed:
 
 3. Create the database:
    - python
-   - from app import db
+   - from main import db
    - db.create_all()
    - exit()
 
@@ -31,7 +30,7 @@ To run this website, you need to have the following installed:
 
 #### To run the website, execute the following command:
 
-python app.py
+python main.py
 Then, go to http://localhost:5000/ in your web browser to access the website.
 
 ## Features
@@ -53,8 +52,8 @@ This website was built using the following technologies:
 - Flask-SQLAlchemy
 - Pillow
 - JavaScript
-- HTML
 - SCSS
+- HTML
 
 ## Contribution
 
